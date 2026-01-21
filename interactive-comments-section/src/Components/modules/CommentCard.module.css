@@ -1,0 +1,150 @@
+.card{
+    background-color: var(--White);
+    margin: 1em 0em;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px var(--Grey_100);
+    position: relative;
+}
+.card , .cardHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.cardHeader > header{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.cardHeader > header > img{
+    width: 32px;
+}
+.cardHeader > header > p{
+    color: var(--Grey_800);
+    font-weight: 500;
+}
+.cardHeader > header > p >span{
+    background-color: var(--Purple_600);
+    border-radius: 2px;
+    font-size: 0.8em;
+    padding:0.2em 0.5em;
+    color: var(--White);
+    margin: 0em 0.7em;
+    display: inline-flex;
+}
+.cardHeader time, .cardHeader .content{
+    color: var(--Grey_500);
+}
+.cardTime{
+    max-width: 100px;
+    overflow:hidden;
+}
+.cardHeader time{
+    white-space: nowrap;
+}
+.content{
+    line-height: 1.5em;
+}
+.cardSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .cardLikes {
+    background-color: var(--Grey_50);
+    padding: 0.7em 0.9em;
+    display: flex;
+    gap: 1em;
+    border-radius: 10px;
+    color: var(--Purple_600);
+    font-weight: 500;
+    font-size: 1em;
+    max-width: 70px;
+}
+.cardLikes button, .cardButtons .reply,.cardButtonsUser button{
+    border: none;
+    display: flex;
+    background-color: transparent;
+}
+.cardLikes button{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cardButtons .reply{
+    color: var(--Purple_600);
+    font-weight: 700;
+    align-items: end;
+    gap: 0.5em;
+    font-size: 0.96em;
+    cursor: pointer;
+}
+.cardButtons .reply:hover{
+    opacity: 0.7;
+}
+.cardButtonsUser{
+    display: flex;
+    gap: 1.4em;
+}
+
+.cardButtonsUser button{
+    gap: 0.5em;
+    align-items: center;
+    cursor: pointer;
+}
+.cardButtonsUser button:hover{
+    opacity:0.7;
+}
+.cardButtonsUser span{
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.cardDelete{
+    color: var(--Pink_400);
+}
+.cardEdit{
+    color: var(--Purple_600)
+}
+
+.cardUpdate{
+    display: flex;
+    gap: 1em;
+}
+.cardUpdate textarea{
+   
+    width: 100%;
+    max-width: none;
+}
+
+.cardDisplayOk{
+    display: none !important;
+}
+@media(min-width:768px) {
+    .cardDisplay{
+        display: none !important;
+    }
+    .cardDisplayOk{
+        display: flex !important;
+    }
+    .card{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .cardLikes{
+        flex-direction: column;
+        gap: 1.4em;
+    }
+    .cardSection {
+        position: absolute;
+        z-index: 2;
+        right: 3%;
+    }
+    .cardHeader{
+        width: 100%;
+    }
+    .cardTime{
+    max-width: 180px;
+}
+}
