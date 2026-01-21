@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Button from './Button'
 import styles from './modules/Delete.module.css'
-function Delete({onConfirm, onCancel}) {
+function Delete({onConfirm,onCancel}) {
 
     useEffect(()=>{
         function handleKeyDown(e) {

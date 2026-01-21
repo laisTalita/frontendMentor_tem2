@@ -1,4 +1,4 @@
-function Button({children, ...props}) {
+function Button({children,...props}) {
     return(
         <button {...props}>
             {children}
