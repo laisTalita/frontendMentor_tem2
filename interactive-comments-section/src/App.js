@@ -11,14 +11,12 @@ function reducer(list,action) {
 
   return list.map(item =>{
       if(item.id === action.payload && item.vote === 0) {
-        return{
-        ...item, score: item.score +1, vote:1
-      }}
+        return{...item, score: item.score +1, vote:1}}
       return{
       ...item,
       replies : item.replies.map(reply =>{
         if (reply.id === action.payload && reply.vote === 0) {
-          return { ...reply, score: reply.score + 1, vote: 1 }
+          return {...reply, score: reply.score + 1, vote: 1 }
         }
         return reply
       })}
@@ -34,7 +32,7 @@ function reducer(list,action) {
         ...item,
         replies : item.replies.map(reply =>{
           if (reply.id === action.payload && reply.vote === 1) {
-            return { ...reply, score: reply.score -1, vote: 0 }
+            return {...reply, score: reply.score -1, vote: 0 }
           }
           return reply
         })
@@ -66,19 +64,13 @@ function reducer(list,action) {
   if (action.type ==='EDIT'){
     return list.map(item =>{
        if (item.id === action.payload.commentID){
-          return{
-            ... item, 
-            content: action.payload.text
-          }
+          return{...item,content: action.payload.text}
        }
        return {
           ...item,
           replies : item.replies.map(reply =>{
             if (action.payload.commentID === reply.id) {
-              return{
-                ...reply,
-                content : action.payload.text
-              }
+              return{...reply,content : action.payload.text}
             }
              return reply; 
           })
@@ -87,9 +79,7 @@ function reducer(list,action) {
   }
   if (action.type ==='DELETE'){
     return list
-    .filter(item =>
-      item.id !== action.payload.commentID
-    )
+    .filter(item =>item.id !== action.payload.commentID)
     .map(item =>({
       ...item,
       replies: item.replies.filter(
@@ -173,34 +163,20 @@ const actions= {
         )}
         {list.map(comment => (
           <article key={comment.id}>
-            <CommentCard 
-            obj={comment}
-            currentUser={data.currentUser} 
-            editingId={editingId} 
-            action={actions}/>
+            <CommentCard obj={comment} currentUser={data.currentUser} editingId={editingId} action={actions}/>
 
                 {comment?.replies.map(reply =>(
                   <article key={reply.id}>
-                    <CommentCard 
-                    obj={reply}                  
-                    currentUser={data.currentUser}
-                    editingId={editingId} 
-                    action={actions}/>
+                    <CommentCard obj={reply} currentUser={data.currentUser}editingId={editingId} action={actions}/>
 
                     {replyingToId?.id === reply.id &&(
-                        <CommentReply 
-                        name={reply?.user?.username} 
-                        currentUser={data.currentUser}
-                        onReply={onReply}/>
+                        <CommentReply name={reply?.user?.username} currentUser={data.currentUser} onReply={onReply}/>
                       )}
                   </article>
                 ))
                 }
             {replyingToId?.id === comment.id &&(
-              <CommentReply 
-              name={comment?.user?.username} 
-              currentUser={data.currentUser} 
-              onReply={onReply}/>
+              <CommentReply name={comment?.user?.username} currentUser={data.currentUser} onReply={onReply}/>
             )}
           </article>
         ))}
