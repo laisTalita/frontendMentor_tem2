@@ -207,7 +207,7 @@ const actions= {
         <CommentReply currentUser={data.currentUser} onReply={newReply}/>
 
          <div className="sub_footer">
-           <p>Challenge by <a href="https://www.frontendmentor.io/home" target="_blank">Frontend Mentor</a>. Coded by <a href="https://portifolio-two-tawny-40.vercel.app/" target="_blank">Lais Talita</a>.</p>
+           <p>Challenge by <a href="https://www.frontendmentor.io/home" target="_blank" rel="noreferrer">Frontend Mentor</a>. Coded by <a href="https://portifolio-two-tawny-40.vercel.app/" target="_blank" rel="noreferrer">Lais Talita</a>.</p>
          </div>
       </main>
     
