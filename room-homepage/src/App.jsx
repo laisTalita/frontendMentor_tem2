@@ -35,7 +35,7 @@ function App() {
             </section>
             <section className='row gx-0 gy-0'>
               <img className='col-12 col-md' src="images/image-about-dark.jpg" alt="image about-dark" />
-              <div className='col-12 col-md-6 col-lg-5 container_segundario d-flex align-items-center justify-content-center'>
+              <div className='col-12 col-md-5 container_segundario d-flex align-items-center justify-content-center'>
                 {pages.map((i,index) =>(
                   i.id ===4 &&(
                     <div key={index} className='container_text'>
