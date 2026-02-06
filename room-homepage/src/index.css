@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+--White: hsl(0, 100%, 100%);
+--Grey_500: hsl(0, 0%, 63%);
+--Grey_800: hsl(0, 0%, 27%);
+--Black: hsl(0, 0%, 0%);
+--font:'League Spartan', sans-serif;
+}
+
+body,html,#root{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: var(--White);
+    font-family: var(--font);
+    font-size: 16px;
+}
+.estilo_botoes{
+    display: flex;
+}
+.estilo_botoes button{
+    background-color: var(--Black);
+    padding: 1em 1.5em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.estilo_botoes button:hover{
+    background-color: var(--Grey_800);
+}
+.estilo_botoes button img{
+    width: 10px;
+}
+.conteudo{
+    padding: 4em 1.5em 5em;
+}
+.container_conteudo{
+    max-width: 430px;
+}
+.container_segundario{
+    padding: 3.2em 1.4em 1.8em;
+}
+.container_conteudo h1{
+    font-size: 2.3em;
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom: 0.4em;
+}
+.main p{
+    color: var(--Grey_500);
+}
+.main{
+    flex: 1;
+}
+.container_conteudo div{
+    margin-top: 2em;
+    gap: 1.4em;
+}
+.container_conteudo div h2{
+    text-transform: uppercase;
+    letter-spacing: 0.9em;
+    margin: 0;
+    font-size: 0.98em;
+    display: inline;
+      transition: color 0.2s ease, transform 0.2s ease;
+}
+.container_conteudo div {
+  cursor: pointer;
+  transition: color 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+}
+
+.container_conteudo div:hover h2,
+.container_conteudo div:focus-visible h2{
+  color: hsl(0, 0%, 63%);
+}
+
+.container_conteudo div:hover img {
+  filter: invert(63%) sepia(0%) saturate(0%) brightness(90%) contrast(85%);
+}
+.container_segundario h3{
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-weight: 700;
+    font-size: 0.86em;
+    margin-bottom:1.2em;
+}
+.conteudo .estilo_botoes{
+    width: 30%;
+    gap: 0%;
+}
+.conteudo .estilo_botoes button{
+    width: 50%;
+    padding: 1.5em;
+}
+.conteudo .estilo_botoes img{
+    width: 13px;
+}
+.container_text{
+    max-width: 510px;
+}
+.mt-xl-3{
+    margin-top: 0.7em !important;
+}
+footer a{
+    color: var(--Grey_500);
+    text-decoration: none;
+}
+.active:hover{
+    border-bottom: 1px solid var(--White);
+    cursor: pointer;
+
+}
+@media(min-width:800px){
+    .conteudo{
+    padding: 6em 1.5em 7em;
+}
+}
+@media (min-width:1400px) {
+    .conteudo{
+    padding: 7.4em 4em 9em;
+}
+.container_conteudo h1{
+        font-size: 2.7em;
+
+}
+.container_segundario h3{
+    font-weight: 700;
+    font-size: 1em;
+}
+}
